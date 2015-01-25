@@ -1,1 +1,60 @@
-Hello World
+<!doctype html>
+<html lang="en" ng-app="MyApp">
+  <head>
+      <meta charset="utf-8">
+      <meta name="description" content="First Angular App">
+      <script type="text/javascript" src="angular.js"></script>
+      <script src="app.js"></script>
+      <link rel="stylesheet" href="app.css">
+      <title>First Angular App</title>
+  </head>
+
+  <body>
+    <div id="wrapper">
+
+    <div id="main" ng-controller="MyAppController">
+
+      <label>Change Greeting:<br>
+      </label>
+      <input type="text" class="textInput" ng-model="greeting" placeholder="{{greeting}}">
+
+     <h4> Let's have some fun with div styling...</h4>
+
+    <span class="instructions">Select the width of the div:</span>
+    <input id="box-width" ng-model="boxWidth" type="range" min="10" max="800" value="">
+    <span class="instructions">Select the height of the div:</span>
+    <input id="box-height" ng-model="boxHeight" type="range" min="10" max="800" value="">
+
+<br>
+
+    <span class="instructions">Select the box color:</span>
+    <span class="sub">(enter color or valid a hex code here)</span>
+    <input type="text" ng-model="color" placeholder="{{color}}">
+
+    <span class="instructions">Select the border color:</span>
+    <span class="sub">(enter color or valid a hex code here)</span>
+    <input type="text" ng-model="borderColor" placeholder="{{borderColor}}">
+
+<br>
+
+      <span class="instructions">Select the border thickness:</span>
+      <input id="border-size" ng-model="borderThickness"  type="range" min="1" max="10" value="1">
+
+
+      <span class="instructions">Select the border radius:</span>
+      <input id="border-radius" ng-model="borderRadius"  type="range" min="1" max="150" value="5">
+
+     <div id="color-box" style="height: {{boxHeight}}px; width: {{boxWidth}}px; background-color: {{color}}; border: {{borderThickness}}px {{borderColor}} solid; border-radius: {{borderRadius}}px;">
+      <div id="greeting">{{greeting}}</div>
+      </div>
+
+<!--       <div class="clear"></div> -->
+
+      <button class="btn" ng-click="buttonClicked()">Reset settings</button>
+
+      </div> <!-- end main div-->
+    </div>  <!-- end wrapper div -->
+  </body>
+</html>
+
+
